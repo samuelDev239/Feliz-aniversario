@@ -47,7 +47,20 @@ align-items: center;
     margin: 50px 0;
     width: 75%;
     padding: 2rem 1rem;
+    
 
+
+}
+@keyframes change{
+    0%{clip-path: circle(15% at 0 0);
+        background: linear-gradient(70deg, #cc003d, #FF004D);
+        color: #d4d4d4;}
+
+    100%{
+        clip-path: circle(150% at 0 0);
+        background: linear-gradient(70deg, #cc003d, #FF004D);
+        color: #d4d4d4;
+    }
 
 }
 @keyframes hert {
@@ -74,12 +87,13 @@ align-items: center;
     align-items: center;
     width: auto;
     justify-content: space-between;
-    margin: 1.5rem 0rem;
+    margin: 0.2rem 0rem 3.5rem 0;
 
 }
 .nome {
     color: #d4d4d4;
     font-size: 14px;
+    font-weight: 400;
    
 
 }
@@ -93,6 +107,7 @@ align-items: center;
     border-top: 0.125rem solid;
     width: 1.25rem;
     border-color: #d4d4d4;
+    cursor: pointer;
   }
   .hamburger::after,
   .hamburger::before {
@@ -135,13 +150,32 @@ align-items: center;
 .btn-container {
     background-color: #d4d4d4;
     margin: 24px 0;
+   
+    border-radius: 25px;
+    transition: 1.5s ease;
+    font-size: 0.8rem; 
+    padding: 10px 25px;
+    
+    
+}
+.btn-container.active {  
+    margin: 24px 0;
     padding: 6px 20px;
     border-radius: 25px;
     transition: 1.5s ease;
+    transition: 0.5s ease;
+    animation-name: change;
+    animation-duration: 1.5s ;
+    animation-fill-mode: forwards;
+    transition: 1s ease;
+    font-size: 0.8rem; 
+    padding: 10px 25px;
+    
     
 }
 .btn-container a {
-    color: #1d1d1d;
+    color: #d4d4d4;
+    transition: 1s;
     font-weight: 700;
 }
 
@@ -152,12 +186,13 @@ align-items: center;
 
 .section h4{
     color: #d4d4d4;
+    font-weight: 500;
 }
 .heart {
     position: absolute;
     z-index: -1;
-    top: 5px;
-    right: 10px;
+    right: 100px;
+    top: 20%;
     animation-name: hert;
     animation-duration: 2s;
     animation-iteration-count: infinite;
@@ -173,25 +208,29 @@ align-items: center;
     padding: 1rem;
     position: absolute;
     top: 80px;
-    right: 20px;
+    right: 10px;
     color: #d4d4d4;
     background-color: #1d1d1db2;
     backdrop-filter: blur(5px);
     box-shadow: 0 10px 25px 10px rgba(3, 3, 3, 0.527);
     text-align: center;
     z-index: 3;
-    width: 40%;
+    width: 60%;
     height: 50%;
     border-radius: 20px;
+    font-weight: 500;
     
     
 
+}
+.circle {
+    clip-path: circle(50% at 0 0);
 }
 
 .menu a {
     color: #d4d4d4;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 500;
 }
 .navbar.active .menu {
     
@@ -201,6 +240,7 @@ align-items: center;
   .navbar.active .hamburger {
     border-top-color: transparent;
     z-index: 8;
+    cursor: pointer;
   }
   .navbar.active .hamburger::before {
     transform: rotate(135deg);
