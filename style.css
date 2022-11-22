@@ -22,6 +22,7 @@ body {
 }
 .nav-item{
 display:flex;
+flex-direction: row;
 gap: 0.5rem;
 }
 .icon {
@@ -117,7 +118,7 @@ justify-content: space'beetwen;
 }
 .title {
     color: #d4d4d4;
-    font-size: 22px;
+    font-size: 16px;
     letter-spacing: 1px;
 
 }
