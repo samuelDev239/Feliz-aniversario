@@ -20,6 +20,10 @@ body {
     height: 20px;
     
 }
+.nav-item{
+display:flex;
+gap: 0.5rem;
+}
 .icon {
     width: 40px;
     height: 40px;
@@ -32,7 +36,7 @@ body {
     flex-direction: column;
     border-radius: 20px;
     margin: 50px 0;
-    width: 70%;
+    width: 80%;
     height: auto;
     padding: 1em;
     position: relative;
@@ -113,7 +117,7 @@ justify-content: space'beetwen;
 }
 .title {
     color: #d4d4d4;
-    font-size: 26px;
+    font-size: 22px;
     letter-spacing: 1px;
 
 }
