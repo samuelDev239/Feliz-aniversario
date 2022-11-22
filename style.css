@@ -20,15 +20,21 @@ body {
     height: 20px;
     
 }
+.nav-item{
+display:flex;
+flex-direction: row;
+gap: 0.5rem;
+}
 .icon {
     width: 40px;
     height: 40px;
     border-radius: 100px;
+
 }
 .nav-item{
     display: flex;
     align-items: center;
-    
+
 }
 .container {
     background-color: #08080891;
@@ -38,9 +44,7 @@ body {
     border-radius: 20px;
     margin: 50px 0;
     width: 75%;
-    height: auto;
-    padding: 2rem 1em 1rem 1em;
-    position: relative;
+
 
 }
 @keyframes hert {
@@ -65,9 +69,11 @@ body {
 .navbar {
     display: flex;
     align-items: center;
+
     margin-bottom: 1rem;
     justify-content: space-between;
     margin: 1.5rem 1rem;
+
 }
 .nome {
     color: #d4d4d4;
@@ -120,7 +126,7 @@ body {
 .title {
     color: #d4d4d4;
     font-size: 22px;
-    letter-spacing: 1px;
+
 
 }
 
