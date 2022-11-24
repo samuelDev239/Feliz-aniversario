@@ -15,7 +15,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+    animation-name: change-background;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 @media(max-width: 400px){
     .navbar{
@@ -67,6 +69,30 @@ align-items: center;
         clip-path: circle(150% at 0 0);
         background: linear-gradient(70deg, #cc003d, #FF004D);
         color: #d4d4d4;
+    }
+
+}
+@keyframes change-container{
+    0%{clip-path: circle(15% at 50% 100%);
+        background: linear-gradient(70deg,  #ffe3e3, #ebd3d3);
+    }
+
+    100%{
+        clip-path: circle(140% at -100% 100%);
+        background: linear-gradient(70deg #ffe3e3, #ebd3d3);
+        
+    }
+
+}
+@keyframes change-background{
+    0%{clip-path: circle(15% at 0% 0%);
+        background: linear-gradient(70deg,  #d4d4d4, #d4d4d4);}
+        
+
+    100%{
+        clip-path: circle(150% at 0% 0%);
+        background: linear-gradient(70deg #d4d4d4, #d4d4d4);
+        
     }
 
 }
@@ -204,6 +230,7 @@ align-items: center;
     font-size: 14px;
 }
 .heart {
+    visibility: hidden;
     position: absolute;
     z-index: -1;
     right: 100px;
@@ -244,23 +271,24 @@ align-items: center;
 }
 .heart.active{
     position: absolute;
+    visibility: visible;
     z-index: -1;
     right: 100px;
     top: 50%;
     fill: #ff004cd0;
-    transition: 0.5s;
+    transition: 1s;
+    transition-delay: 0.2s;
     
     animation-name: hert;
     animation-duration: 2s;
+    
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 svg {
     z-index: 1;
 }
-.navbar.change .heart.active{
-    visibility: hidden;
-}
+
 .navbar.change .menu{
     
         visibility:hidden;
@@ -429,6 +457,8 @@ svg {
     margin: 50px 0;
     width: 75%;
     padding: 2rem 1.5rem;
+    animation-name: change-container;
+    animation-duration: 1s;
     
 
 
