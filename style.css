@@ -3,10 +3,12 @@
     margin: 0;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
+   
     
 }
 body {
     background-color: #303030;
+    overflow-x: hidden;
     background-size: 100%;
     min-width: 100vw;
     min-height: 100vh;
@@ -35,18 +37,23 @@ align-items: center;
     width: 40px;
     height: 40px;
     border-radius: 100px;
+    cursor: pointer;
 
 }
 
 .container {
-    background-color: #08080891;
+    background: linear-gradient(
+  0deg,
+  rgba(29, 29, 29, 0.8) 88%,
+  rgb(23, 23, 23) 70%
+);
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     border-radius: 20px;
     margin: 50px 0;
     width: 75%;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
     
 
 
@@ -87,7 +94,8 @@ align-items: center;
     align-items: center;
     width: auto;
     justify-content: space-between;
-    margin: 0.2rem 0rem 3.5rem 0;
+    margin: 0.2rem 0rem 5.5rem 0;
+  
 
 }
 .nome {
@@ -131,6 +139,7 @@ align-items: center;
     border-radius: 10px;
     height: 3em;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.25);
+    gap: 10px;
 }
 .container-items {
     width: auto;
@@ -155,10 +164,15 @@ align-items: center;
     transition: 1.5s ease;
     font-size: 0.8rem; 
     padding: 10px 25px;
+    cursor: pointer;
     
     
 }
-.btn-container.active {  
+.botao {
+    margin: 2rem auto 0.5rem;
+}
+.btn-container.active { 
+    cursor: pointer; 
     margin: 24px 0;
     padding: 6px 20px;
     border-radius: 25px;
@@ -187,16 +201,18 @@ align-items: center;
 .section h4{
     color: #d4d4d4;
     font-weight: 500;
+    font-size: 14px;
 }
 .heart {
     position: absolute;
     z-index: -1;
     right: 100px;
-    top: 20%;
+    top: 50%;
     animation-name: hert;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    fill: #ff004cd0;
 }
 .menu {
     visibility: hidden;
@@ -223,6 +239,67 @@ align-items: center;
     
 
 }
+.navbar.change .menu li {
+    border: none;
+}
+.heart.active{
+    position: absolute;
+    z-index: 1;
+    right: 100px;
+    top: 50%;
+    fill: #ff004cd0;
+    transition: 0.5s;
+    
+    animation-name: hert;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+svg {
+    z-index: 1;
+}
+.navbar.change .heart.active{
+    visibility: hidden;
+}
+.navbar.change .menu{
+    
+        visibility:hidden;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 1rem;
+        padding: 1rem;
+        position: absolute;
+        top: 80px;
+        right: 10px;
+        color: #1d1d1d;
+        background: linear-gradient(to top, #d50040, #ff004cd0) ;
+        backdrop-filter: blur(5px);
+        box-shadow: none;
+        text-align: center;
+        z-index: 50;
+        width: 60%;
+        height: 50%;
+        border-radius: 20px;
+        font-weight: 500;
+        border: none;
+        
+        
+    
+    }
+
+    .heart.active {
+        z-index: 40;
+    }
+    .navbar.change .menu a{
+    
+        color: #d4d4d4;
+        font-size: 16px;
+        font-weight: 600;
+    
+    }
+
 .circle {
     clip-path: circle(50% at 0 0);
 }
@@ -237,11 +314,17 @@ align-items: center;
     visibility: visible;
     overflow-y: auto;
   }
+  .navbar.change.active .hamburger {
+    border-top-color: transparent;
+    z-index: 8;
+    cursor: pointer;
+  }
   .navbar.active .hamburger {
     border-top-color: transparent;
     z-index: 8;
     cursor: pointer;
   }
+
   .navbar.active .hamburger::before {
     transform: rotate(135deg);
     z-index: 8;
@@ -253,7 +336,7 @@ align-items: center;
   }
 
   .menu li{
-   border-bottom: 1px solid rgb(34, 34, 34);
+ 
     width: 100%;
     height: 50%;
     text-align: center;
@@ -273,3 +356,112 @@ align-items: center;
     background-color: #00000054;
   }
 
+  .fundo {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-color: #000000d0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
+  }
+  .fundo.active {
+    visibility:visible;
+    display: flex;
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-color: #000000d0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 10;
+    display: flex;
+  }
+.seila {
+    width: 1.5rem;
+    border-radius: 20px;
+    height: 3px;
+    background-color: #d4d4d4;
+    transform: rotate(135deg);
+    z-index: 30;
+    position: absolute;
+    top: 10rem;
+    right: 1.2rem;
+    cursor: pointer;
+    
+}
+.seila::after{
+    content: "";
+    width: 1.5rem;
+    display: block;
+    border-radius: 20px;
+    height: 3px;
+    background-color: #d4d4d4;
+    transform: rotate(-90deg);
+}
+ 
+  .imagem {
+
+    z-index: 11;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+  }
+
+  .container.active {
+    background: linear-gradient(to top, #ffe3e3, #ebd3d3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    margin: 50px 0;
+    width: 75%;
+    padding: 2rem 1.5rem;
+    
+
+
+}
+.container-items.active {
+    visibility: hidden;
+}
+
+.navbar.change .hamburger {
+    border-top: 0.125rem solid;
+    width: 1.25rem;
+    border-color: #1d1d1d;
+    cursor: pointer;
+  }
+  .navbar.change .hamburger::before {
+    content: " ";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: #1d1d1d;
+    margin-top: 0.3125rem;
+    position: relative;
+    transition: 0.3s;
+  
+  }
+  .navbar.change .hamburger::after {
+    content: " ";
+    display: block;
+    width: 1.25rem;
+    height: 0.125rem;
+    background: #1d1d1d;
+    margin-top: 0.3125rem;
+    position: relative;
+    transition: 0.3s;
+   
+  }
+  .navbar.change .nome {
+    color: #1d1d1d;
+  }
