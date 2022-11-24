@@ -9,7 +9,14 @@ const container = document.querySelector('.container')
 const objeto = document.querySelector('.container-items')
 const ham = document.querySelector('.hamburger')
 const coracao = document.querySelector('.heart')
+const divTexto = document.createElement('div')
+const text = document.createElement('h2')
+const result = document.querySelector('.resultado')
+const bg = document.querySelector('body')
+divTexto.classList.add("nfjfkjd")
+text.textContent = "Voce já tem eu";
 function depois(event) {
+   
     if (event.type === "touchstart") event.preventDefault()
     nav.classList.toggle("active")
     coracao.classList.toggle("rem")
@@ -20,7 +27,9 @@ function change(event){
     container.classList.toggle("active")
     objeto.classList.toggle("active")
     coracao.classList.toggle("active")
-    
+    bg.classList.toggle("active")
+    result.appendChild(text)
+    result.classList.toggle("active")
     nav.classList.toggle("change")
 
 }
