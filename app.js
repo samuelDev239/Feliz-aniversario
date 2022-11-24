@@ -12,6 +12,7 @@ const coracao = document.querySelector('.heart')
 function depois(event) {
     if (event.type === "touchstart") event.preventDefault()
     nav.classList.toggle("active")
+    coracao.classList.toggle("rem")
 }
 function change(event){
     if (event.type === "touchstart") event.preventDefault()
