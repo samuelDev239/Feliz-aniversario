@@ -277,7 +277,7 @@ align-items: center;
     position: absolute;
     visibility: visible;
     z-index: -1;
-    right: 100px;
+    right: 30%;
     top: 50%;
     fill: #ff004cd0;
     transition: 1s;
